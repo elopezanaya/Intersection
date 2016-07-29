@@ -22,48 +22,31 @@ public class Intersection {
 			
 			conjuctionOrdered.add(element);
 		}
-		
-		
-		
+
 		return conjuctionOrdered;
-		
 	}
 	
 	public Object obtainIntersection(int[] conjunctionOne, int[] conjunctionTwo) {
 		
-		List<Integer> result= new ArrayList<Integer>();
-			
-		
+	List<Integer> result= new ArrayList<Integer>();
+	
 	if (conjunctionOne != null && conjunctionTwo != null){
-
-		
+	
 		Set conjuctionBase= castToCollection(conjunctionOne);
-		
-		
 		SortedSet conjuctionToSearch= castToCollection(conjunctionTwo);
 		
 		Iterator iterator = conjuctionBase.iterator();
 		int candidate=0;
 		while(iterator.hasNext()){
-			
 			candidate= (Integer) iterator.next();
-			
+
 			if (conjuctionToSearch.contains(candidate)){
-				
 				result.add(candidate);
 			}
-			
-			
-			
 		}
-		
-		
 	}
-		
-		logger.debug(Arrays.toString(result.toArray()));
-		
-		return result;
-		
-		}
+	logger.debug(Arrays.toString(result.toArray()));
+	return result;
+	}
 
 }
